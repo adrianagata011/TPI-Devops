@@ -59,5 +59,6 @@ jobs:
       - name: 🚂 Desplegar en Railway
         run: |
           curl -fsSL https://railway.app/install.sh | sh
-          railway login --token ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }} railway login
           railway up --service backend
+
