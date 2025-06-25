@@ -2,6 +2,8 @@
 
 Aplicación desarrollada como Trabajo Práctico Integrador (TPI) para aplicar prácticas de DevOps: desarrollo, contenerización, testing y despliegue continuo.
 
+Repositorio: [adrianagata011/TPI-Devops](https://github.com/adrianagata011/TPI-Devops)
+
 ---
 
 ## 🚀 Descripción
@@ -37,6 +39,8 @@ TPI_Devops/<br>
 └── docker-compose.yml<br>
 └── Readme.md<br>
 
+---
+
 ## 🐳 Dockerización
 
 Construcción e inicialización de las imagenes :
@@ -47,6 +51,8 @@ docker-compose up --build backend backend-test frontend
 La app estará disponible en:
 
 📍 http://localhost:3000
+
+---
 
 ## 🧪 Testing
 
@@ -71,6 +77,8 @@ backend-test-1  | Time:        1.465 s
 backend-test-1  | Ran all test suites.
 backend-test-1 exited with code 0
 ```
+
+---
 
 ## ⚙️ CI/CD Automatizado con GitHub Actions
 
@@ -103,6 +111,8 @@ Este proyecto implementa un workflow de integración y despliegue continuo que s
 13. ✅ **🏁 Complete job**  
     Cierra el proceso exitosamente.
 
+---
+
 ## 🐳 Docker Hub
 
 Este proyecto publica automáticamente las imágenes Docker del backend y frontend en DockerHub utilizando GitHub Actions.
@@ -127,6 +137,7 @@ Las imágenes se actualizan automáticamente en cada push a la rama `main`.
 
 ![Pipeline](img/Captura-Pipeline.jpg)
 
+---
 
 ## 🚀 Despliegue en Railway
 
@@ -161,6 +172,8 @@ De esta manera, React construye la app con el backend apuntando al entorno de pr
 
 ![RailWay](img/Capura-RailWay.jpg)
 
+---
+
 ## 👥 Equipo de Trabajo
 
 Este proyecto fue desarrollado por estudiantes de la Tecnicatura Superior en Desarrollo de Software:
@@ -173,12 +186,15 @@ Este proyecto fue desarrollado por estudiantes de la Tecnicatura Superior en Des
 | Alejandro Loredo    | Documentación, testing y soporte funcional |
 | Trinidad Pasi       | Testing, validación y control de calidad |
 
+---
 
 ## ✅ Conclusiones
 
 Este proyecto permitió aplicar conceptos claves de DevOps en un entorno práctico, incluyendo automatización de pruebas, integración continua, y contenerización con Docker.
 
 Se logró un entorno reproducible, escalable y fácilmente desplegable.
+
+---
 
 ## 📄 Licencia
 Uso académico – Tecnicatura en Desarrollo de Software
