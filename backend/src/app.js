@@ -7,11 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/todolist';
-
-mongoose.connect(mongoURL)
-  .then(() => console.log('✅ Conectado a MongoDB'))
-  .catch(err => console.error('❌ Error de conexión:', err));
+// Conexión se hace desde server.js o test explícitamente
 
 const Task = mongoose.model('Task', { title: String, done: Boolean });
 
@@ -36,7 +32,5 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json({ message: 'Tarea eliminada' });
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`🚀 Backend corriendo en http://localhost:${PORT}`);
-});
+// 👉 Exportamos la app sin escuchar puerto
+module.exports = app;

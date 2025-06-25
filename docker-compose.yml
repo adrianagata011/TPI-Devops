@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   backend:
     build: ./backend
@@ -10,6 +8,14 @@ services:
       - PORT=4000
     depends_on:
       - mongo
+
+  backend-test:
+    build: ./backend
+    command: ["npm", "test"]
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/todolist_test
 
   frontend:
     build: ./frontend
