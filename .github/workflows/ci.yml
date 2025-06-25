@@ -57,8 +57,9 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/tpi-frontend:latest
 
       - name: 🚂 Desplegar en Railway
-        run: |
-          curl -fsSL https://railway.app/install.sh | sh
-          RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }} railway login
-          railway up --service backend
+        uses: railwayapp/cli-action@v1
+        with:
+          railwayToken: ${{ secrets.RAILWAY_TOKEN }}
+          command: up --service backend
+
 
