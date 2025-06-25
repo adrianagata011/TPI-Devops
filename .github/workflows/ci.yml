@@ -17,17 +17,12 @@ jobs:
         image: mongo
         ports:
           - 27017:27017
-        options: >-
-          --health-cmd="mongo --eval 'db.runCommand({ ping: 1 })'"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
 
     steps:
       - name: 📥 Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: 🟢 Instalar Node.js
+      - name: 🟢 Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
@@ -37,6 +32,9 @@ jobs:
       - name: 📦 Instalar dependencias del backend
         working-directory: ./backend
         run: npm install
+
+      - name: ⏱️ Esperar a Mongo
+        run: sleep 10
 
       - name: 🧪 Ejecutar tests del backend
         working-directory: ./backend
