@@ -1,3 +1,5 @@
+# Dockerfile for a Node.js application
+# This Dockerfile sets up a Node.js environment, installs dependencies, and runs the application.
 FROM node:18
 
 WORKDIR /app
