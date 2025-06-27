@@ -111,6 +111,10 @@ Este proyecto implementa un workflow de integración y despliegue continuo que s
 13. ✅ **🏁 Complete job**  
     Cierra el proceso exitosamente.
 
+## 📸 Capturas del pipeline
+
+![Pipeline](img/Captura-Pipeline.jpg)
+
 ---
 
 ## 🐳 Docker Hub
@@ -128,14 +132,6 @@ Este proyecto publica automáticamente las imágenes Docker del backend y fronte
 - Incluye la aplicación React para la gestión de tareas.
 
 Las imágenes se actualizan automáticamente en cada push a la rama `main`.
-
----
-
-## 📸 Capturas del pipeline
-
-✅ Tests ejecutándose:
-
-![Pipeline](img/Captura-Pipeline.jpg)
 
 ---
 
