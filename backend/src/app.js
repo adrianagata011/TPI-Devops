@@ -32,5 +32,13 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json({ message: 'Tarea eliminada' });
 });
 
-// 👉 Exportamos la app sin escuchar puerto
+const client = require('prom-client');
+const collectDefaultMetrics = client.collectDefaultMetrics;
+collectDefaultMetrics();
+
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', client.register.contentType);
+  res.end(await client.register.metrics());
+});
+
 module.exports = app;
