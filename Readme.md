@@ -19,6 +19,7 @@ Se trata de una API REST sencilla para gestionar tareas (to-do list), desarrolla
 - Docker y Docker Compose
 - GitHub Actions (CI/CD)
 - Jest + Supertest (testing)
+- Prometheus + Grafana (monitoring)
 - Docker Hub (almacenamiento de imágenes)
 - Deploy en Producción (con Railway)
 
@@ -77,6 +78,18 @@ backend-test-1  | Time:        1.465 s
 backend-test-1  | Ran all test suites.
 backend-test-1 exited with code 0
 ```
+
+---
+
+## 📊 Métricas
+
+La aplicación expone métricas en formato Prometheus en el endpoint `/metrics` del backend. Estas métricas pueden ser consumidas por Grafana o cualquier otro sistema de monitoreo compatible con Prometheus.
+
+Las métricas expuestas incluyen:
+
+- Métricas por defecto de `prom-client` (uso de CPU, uso de memoria, etc.).
+- Métricas personalizadas:
+    - `tasks_total`: Número total de tareas creadas, actualizadas o eliminadas.
 
 ---
 
@@ -152,7 +165,7 @@ Los tres servicios fueron creados dentro de un **único proyecto Railway** para 
 ### 🌍 URLs de producción
 
 - **Frontend:** [https://frontend-production-923b.up.railway.app](https://frontend-production-923b.up.railway.app)
-- **Backend:** [https://backend-production-f995.up.railway.app](https://backend-production-f995.up.railway.app)
+- **Backend:** [https://backend-production-f995.up.railway.app/tasks](https://backend-production-f995.up.railway.app/tasks)
 
 ### 📦 Variables de entorno
 
@@ -200,9 +213,9 @@ Y además, incorporar conceptos clave de DevOps en un entorno práctico, tales c
 - Automatización de pruebas
 - Integración continua
 - Contenerización con Docker
+- Seguimiento de metricas con Prometheus y Grafana
 
 Todos estos procesos son perfectamente aplicables a proyectos de cualquier escala.
-
 ---
 
 ## 📄 Licencia
