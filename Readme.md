@@ -19,6 +19,7 @@ Se trata de una API REST sencilla para gestionar tareas (to-do list), desarrolla
 - Docker y Docker Compose
 - GitHub Actions (CI/CD)
 - Jest + Supertest (testing)
+- Prometheus + Grafana (monitoring)
 - Docker Hub (almacenamiento de imágenes)
 - Deploy en Producción (con Railway)
 
@@ -77,6 +78,18 @@ backend-test-1  | Time:        1.465 s
 backend-test-1  | Ran all test suites.
 backend-test-1 exited with code 0
 ```
+
+---
+
+## 📊 Métricas
+
+La aplicación expone métricas en formato Prometheus en el endpoint `/metrics` del backend. Estas métricas pueden ser consumidas por Grafana o cualquier otro sistema de monitoreo compatible con Prometheus.
+
+Las métricas expuestas incluyen:
+
+- Métricas por defecto de `prom-client` (uso de CPU, uso de memoria, etc.).
+- Métricas personalizadas:
+    - `tasks_total`: Número total de tareas creadas, actualizadas o eliminadas.
 
 ---
 
@@ -152,7 +165,7 @@ Los tres servicios fueron creados dentro de un **único proyecto Railway** para 
 ### 🌍 URLs de producción
 
 - **Frontend:** [https://frontend-production-923b.up.railway.app](https://frontend-production-923b.up.railway.app)
-- **Backend:** [https://backend-production-f995.up.railway.app](https://backend-production-f995.up.railway.app)
+- **Backend:** [https://backend-production-f995.up.railway.app/tasks](https://backend-production-f995.up.railway.app/tasks)
 
 ### 📦 Variables de entorno
 
@@ -186,10 +199,23 @@ Este proyecto fue desarrollado por estudiantes de la Tecnicatura Superior en Des
 
 ## ✅ Conclusiones
 
-Este proyecto permitió aplicar conceptos claves de DevOps en un entorno práctico, incluyendo automatización de pruebas, integración continua, y contenerización con Docker.
+Este proyecto permitió aplicar conceptos clave de DevOps en un entorno práctico, incluyendo la automatización de pruebas, la integración continua y la contenerización con Docker. Se logró así un entorno reproducible, escalable y fácilmente desplegable.
+Además de recorrer las etapas tradicionales del ciclo de desarrollo de software, este proyecto nos expuso a las tareas propias del enfoque DevOps necesarias para llevar una idea desde su concepción hasta el despliegue en entornos de producción, utilizando herramientas de proveedores líderes del mercado como Railway.
+Esto implicó realizar búsquedas en internet y leer documentación para poder ejecutar las tareas que el proyecto demandaba, lo cual asemeja este trabajo integrador a un escenario real del ámbito laboral en el ciclo de vida de un proyecto de software.
+Si bien la aplicación desarrollada presenta una funcionalidad muy básica, el proyecto nos permitió explorar todas las etapas de dicho ciclo, incluyendo:
+- Análisis de requerimientos
+- Selección de tecnologías, definición de arquitectura e ingeniería de la solución
+- Codificación
+- Testeo manual de funcionalidades
+- Uso de GitFlow como metodología de control de versiones
 
-Se logró un entorno reproducible, escalable y fácilmente desplegable.
+Y además, incorporar conceptos clave de DevOps en un entorno práctico, tales como:
+- Automatización de pruebas
+- Integración continua
+- Contenerización con Docker
+- Seguimiento de metricas con Prometheus y Grafana
 
+Todos estos procesos son perfectamente aplicables a proyectos de cualquier escala.
 ---
 
 ## 📄 Licencia
